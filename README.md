@@ -1,5 +1,7 @@
 # Hedge vs AdaHedge — Online Learning with Expert Advice
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bruskez/Hedge-vs.-AdaHedge/blob/main/reproduce.ipynb)
+
 Experimental project for *Statistical Methods for Machine Learning* (Assignment 1 — Online Learning, Adaptive Hedge).
 
 Hedge with a fixed learning rate and AdaHedge (van Erven, Grünwald, Koolen, de Rooij, NeurIPS 2011) are implemented from scratch and compared on three synthetic loss regimes:
@@ -15,6 +17,7 @@ Hedge is run with η = c·η_T, c ∈ {1/4, 1, 4, 16, 64}, where η_T = √(8 ln
 
 ```
 main.py                  runs all the experiments and writes results/
+reproduce.ipynb          Colab notebook: runs main.py, checks and shows the results
 src/algorithms.py        Hedge (fixed learning rate) and AdaHedge
 src/losses.py            generators of the three loss regimes
 src/experiments.py       online protocol, regret, theoretical bounds
@@ -38,6 +41,8 @@ All random sequences are generated from fixed seeds, so the run reproduces exact
 - `results/final_regret.csv`: final regret (mean, standard deviation, 95% CI) of every algorithm in every regime;
 - `results/diagnostics.json`: AdaHedge segments, final learning rates and theoretical reference values;
 - `results/table_final_regret.tex`: table included in the report.
+
+Alternatively, open `reproduce.ipynb` in Google Colab (badge above), with nothing to install: it clones the repository, runs `main.py`, checks that the regenerated numbers are identical to the committed ones in `results/` and shows the final-regret table and the figures.
 
 
 ## References
