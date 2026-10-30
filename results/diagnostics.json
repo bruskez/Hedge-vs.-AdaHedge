@@ -1,0 +1,38 @@
+{
+  "K": 10,
+  "T": 10000,
+  "n_reps": 100,
+  "phi": 2.0,
+  "seed": 2026,
+  "eta_T": 0.042919320525786946,
+  "worst_case_bound_eta_T": 107.29830131446737,
+  "regimes": {
+    "stochastic": {
+      "adahedge_segments_mean": 1.18,
+      "adahedge_segments_min": 1,
+      "adahedge_segments_max": 2,
+      "adahedge_final_eta_mean": 0.91,
+      "adahedge_lemma4_bound_holds_fraction": 1.0,
+      "fraction_runs_designated_expert_is_best": 1.0,
+      "best_expert_final_loss_mean": 3006.33
+    },
+    "adversarial": {
+      "adahedge_segments_mean": 6.0,
+      "adahedge_segments_min": 6,
+      "adahedge_segments_max": 6,
+      "adahedge_final_eta_mean": 0.03125,
+      "adahedge_lemma4_bound_holds_fraction": 1.0,
+      "fraction_runs_designated_expert_is_best": null,
+      "best_expert_final_loss_mean": 5496.95
+    },
+    "low_gap": {
+      "adahedge_segments_mean": 5.22,
+      "adahedge_segments_min": 3,
+      "adahedge_segments_max": 6,
+      "adahedge_final_eta_mean": 0.058125,
+      "adahedge_lemma4_bound_holds_fraction": 1.0,
+      "fraction_runs_designated_expert_is_best": 0.69,
+      "best_expert_final_loss_mean": 4887.58
+    }
+  }
+}

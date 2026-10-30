@@ -10,7 +10,6 @@ Hedge with a fixed learning rate and AdaHedge (van Erven, Grünwald, Koolen, de 
 
 Hedge is run with η = c·η_T, c ∈ {1/4, 1, 4, 16, 64}, where η_T = √(8 ln K / T) is the worst-case tuning. Setting: K = 10 experts, T = 10 000 rounds, 100 repetitions per regime.
 
-The report is in [`report/report.pdf`](report/report.pdf).
 
 ## Repository structure
 
@@ -21,8 +20,6 @@ src/losses.py            generators of the three loss regimes
 src/experiments.py       online protocol, regret, theoretical bounds
 src/plots.py             figures
 results/                 figures (PDF), final_regret.csv, diagnostics.json, LaTeX table
-report/report.tex        LaTeX source of the report
-report/report.pdf        compiled report
 ```
 
 ## Reproducing the results
@@ -34,7 +31,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-All random sequences are generated from fixed seeds, so the run reproduces exactly the numbers in the report (about 3 minutes on a laptop). Outputs:
+All random sequences are generated from fixed seeds, so the run reproduces exactly the numbers in the report. Outputs:
 
 - `results/stochastic.pdf`, `results/adversarial.pdf`, `results/low_gap.pdf`: cumulative loss and regret vs time;
 - `results/eta_sensitivity.pdf`: final regret of Hedge as a function of η, compared with AdaHedge;
@@ -42,14 +39,11 @@ All random sequences are generated from fixed seeds, so the run reproduces exact
 - `results/diagnostics.json`: AdaHedge segments, final learning rates and theoretical reference values;
 - `results/table_final_regret.tex`: table included in the report.
 
-To recompile the report after running the experiments:
-
-```bash
-cd report
-pdflatex report.tex && pdflatex report.tex
-```
 
 ## References
 
 - T. van Erven, P. D. Grünwald, W. M. Koolen, S. de Rooij. *Adaptive Hedge*. NeurIPS 2011 (arXiv:1110.6416).
 - T. R. Cesari, N. Cesa-Bianchi. *Hedge and Exp3 for sequential decision-making*. Lecture notes, 2025.
+- Y. Freund, R. E. Schapire. *A decision-theoretic generalization of on-line learning and an
+application to boosting*. Journal of Computer and System Sciences, 55:119–139, 1997.
+- N. Cesa-Bianchi, G. Lugosi. *Prediction, Learning, and Games*. Cambridge University Press, 2006.
